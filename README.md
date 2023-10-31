@@ -27,5 +27,6 @@ Beispiel Config File ist im git, da bitte die Benutzerdaten eintragen. Danach mi
 ## 2. Service file
 Auch im Git vorhanden. Hochladen unter /etc/init.d/.
 ## 3. Always Online Script
-Die netten Menschen vom BITS hassen uns und disconnecten uns alle x Stunden (Alles spaß die haben unser Internet nach Jahren endlich auf nicht-gottlose level geupgraded wir sind homies). Deswegen brauchen wir leider ein Script was immer wieder checkt ob wir noch Online sind. Das Script bitte unter //TODO LOCATION hochladen.
-Danach brauchen wir noch einen Cronjob der das Script alle 2-3 Min laufen lässt
+Die netten Menschen vom BITS hassen uns und disconnecten uns alle x Stunden (Alles spaß die haben unser Internet nach Jahren endlich auf nicht-gottlose level geupgraded wir sind homies).  
+Deswegen brauchen wir leider ein Script was immer wieder checkt ob wir noch Online sind. Das Script bitte unter //TODO LOCATION hochladen.  
+Danach brauchen wir noch einen Cronjob der das Script alle 2-3 Min laufen lässt  
