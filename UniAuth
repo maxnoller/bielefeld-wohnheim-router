@@ -1,0 +1,25 @@
+~!/bin/sh /etc/rc.common
+
+START=46
+STOP=15
+
+EXTRA_COMMANDS="status"
+EXTRA_HELP="If there is a service here with the name wpa_supplicant thats good"
+# Change this to the name of your routers wan interface
+INTERFACE=eth0.2
+start() {
+   echo Starting UniAuth using Wpa-Supplicant
+   cpuinfo=`grep -m 1 "system type" /proc/cpuinfo | cut -d: -f2`
+   echo Device Info: $cpuinfo
+   wpa_supplicant -i $INTERFACE -D wired -c /etc/whnetz.conf -B -dd | tee /tmp/wpa_supplicant.log
+}
+
+stop() {
+   echo "Stopping UniAuth"
+   killall wpa_supplicant && echo "wpa_supplicant was terminated"
+}
+
+status()  {
+   echo Is there a service called wpa_supplicant running? 
+   ps |grep wpa_supplicant
+}
