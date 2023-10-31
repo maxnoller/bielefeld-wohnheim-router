@@ -3,7 +3,7 @@ In den Wohnheimen in Bielefeld gibts nur komisches internet und da wir alle kein
 
 Falls es Fragen oder Probleme gibt erstellt ein Issue dann werde ich antworten.
 
-** ICH ÜBERNEHME KEINE VERANTWORTUNG FÜR IRGENDWAS, WAS PASSIERT WENN JEMAND DAS MIT DIESEM GUIDE VERSUCHT **
+**ICH ÜBERNEHME KEINE VERANTWORTUNG FÜR IRGENDWAS, WAS PASSIERT WENN JEMAND DAS MIT DIESEM GUIDE VERSUCHT**
 
 ## Hardware
 Theoretisch geht das mit jedem Router der OpenWRT laufen lassen kann. Am besten ein modernerer Router. Ich hab das bisher nur mit TP-Link Routern vorallem dem Archer C50 und Archer C60 getestet.
