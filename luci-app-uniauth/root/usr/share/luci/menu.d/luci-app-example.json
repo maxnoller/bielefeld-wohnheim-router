@@ -1,0 +1,30 @@
+{
+  "admin/uniauth/": {
+    "title": "UniAuth",
+    "order": 60,
+    "action": {
+      "type": "firstchild"
+    },
+    "depends": {
+      "acl": [ "luci-app-uniauth" ]
+    }
+  },
+
+  "admin/uniauth/credentials": {
+    "title": "Credentials",
+    "order": 1,
+    "action": {
+      "type": "view",
+      "path": "uniauth/form"
+    }
+  },
+
+  "admin/uniauth/html": {
+    "title": "HTML Page",
+    "order": 2,
+    "action": {
+      "type": "view",
+      "path": "uniauth/htmlview"
+    }
+  }
+}

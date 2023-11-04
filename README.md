@@ -30,3 +30,6 @@ Auch im Git vorhanden. Hochladen unter /etc/init.d/.
 Die netten Menschen vom BITS hassen uns und disconnecten uns alle x Stunden (Alles spaß die haben unser Internet nach Jahren endlich auf nicht-gottlose level geupgraded wir sind homies).  
 Deswegen brauchen wir leider ein Script was immer wieder checkt ob wir noch Online sind. Das Script bitte unter //TODO LOCATION hochladen.  
 Danach brauchen wir noch einen Cronjob der das Script alle 2-3 Min laufen lässt  
+# LUCI App Installation
+scp -r root/* root@192.168.1.1:/
+scp -r htdocs/* root@192.168.1.1:/www/

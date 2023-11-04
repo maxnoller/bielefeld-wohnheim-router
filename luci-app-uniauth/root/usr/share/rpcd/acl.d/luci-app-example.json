@@ -1,0 +1,25 @@
+{
+  "luci-app-uniauth": {
+    "description": "Grant UCI access to LuCI app example",
+    "read": {
+      "ubus": {
+        "uci": [
+          "get"
+        ]
+      },
+      "uci": [
+        "uniauth"
+      ]
+    },
+    "write": {
+      "ubus": {
+        "uci": [
+          "set", "commit"
+        ]
+      },
+      "uci": [
+        "uniauth"
+      ]
+    }
+  }
+}
