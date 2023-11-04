@@ -1,17 +1,36 @@
-~!/bin/sh /etc/rc.common
-
+#!/bin/sh /etc/rc.common
 START=46
 STOP=15
 
 EXTRA_COMMANDS="status"
 EXTRA_HELP="If there is a service here with the name wpa_supplicant thats good"
 # Change this to the name of your routers wan interface
-INTERFACE=eth0.2
 start() {
    echo Starting UniAuth using Wpa-Supplicant
    cpuinfo=`grep -m 1 "system type" /proc/cpuinfo | cut -d: -f2`
    echo Device Info: $cpuinfo
-   wpa_supplicant -i $INTERFACE -D wired -c /etc/whnetz.conf -B -dd | tee /tmp/wpa_supplicant.log
+
+    username=$(uci get uniauth.@credentials[0].username)
+    password=$(uci get uniauth.@credentials[0].password)
+    interface=$(uci get network.wan.device)
+
+    cat << EOF > /etc/config/wpa_supplicant.conf
+    ctrl_interface=/var/run/wpa_supplicant
+    fast_reauth=1
+    ap_scan=1
+
+    network={
+        key_mgmt=WPA-EAP
+        eap=PEAP
+        ca_cert="/etc/ssl/certs/uni.pem"
+        phase2="auth=MSCHAPV2"
+        priority=10
+        identity="$username"
+        password="$password"
+}
+EOF
+   wpa_supplicant -i $interface -D wired -c /etc/config/wpa_supplicant.conf -B -dd | tee /tmp/wpa_supplicant.log
+
 }
 
 stop() {
@@ -20,6 +39,6 @@ stop() {
 }
 
 status()  {
-   echo Is there a service called wpa_supplicant running? 
+   echo Is there a service called wpa_supplicant running?
    ps |grep wpa_supplicant
 }
