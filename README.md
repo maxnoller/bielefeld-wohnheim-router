@@ -12,7 +12,7 @@ Theoretisch geht das mit jedem Router der OpenWRT laufen lassen kann. Am besten 
 Es gibt da so eine Tolle website: https://firmware-selector.openwrt.org/  
 Da das Router Modell eingeben und dann sicherstellen das die folgenden Packages mit installiert werden:
 - Luci
-- (??WPAD irgendwas??)
+- wpad-wolfssl
 
 ### Installation
 Einfach den Router Namen mit dem wort OpenWRT dahinter googeln, es gibt zu fast jedem Kompatiblen Router eine OpenWRT Wiki Seite auf der eine Installationsanleitung steht.
